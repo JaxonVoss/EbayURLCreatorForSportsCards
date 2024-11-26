@@ -16,7 +16,7 @@ def open_links(auction_or_bin, year, brand, player):
     url1 += add_array_to_url(player_array)
     url1 += "&_sacat=0&LH_"
 
-    url2 = "https://www.ebay.com/sch/i.html?_from=R40&_nkw="
+    url2 = "https://www.ebay.com/sch/i.html?_from=R40&_nkw=" + year
     url2 += add_array_to_url(brand_array)
     url2 += add_array_to_url(player_array)
     url2 += "&_sacat=0&_sop=10&LH_Sold=1&LH_Complete=1&rt=nc&LH_All=1"
