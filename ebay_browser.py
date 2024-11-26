@@ -78,7 +78,6 @@ def main():
     year = ""
     brand = ""
     player = ""
-    player_flag = True
 
     auction_or_bin = auction_or_bin_choice()
     year = year_choice()
