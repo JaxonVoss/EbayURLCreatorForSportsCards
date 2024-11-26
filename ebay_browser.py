@@ -30,27 +30,24 @@ def open_links(auction_or_bin, year, brand, player):
     # Launches the web browser
     webbrowser.open_new_tab(url1)
     webbrowser.open_new_tab(url2)
-        
-def main():
-    auction_or_bin = ""
-    year = ""
-    brand = ""
-    player = ""
-    brand_flag = True
-    player_flag = True
-    
+
+def auction_or_bin_choice():
     while True:
         auction_or_bin = input("Auction or Buy It Now (a or bin): ")
         if auction_or_bin == "a" or auction_or_bin == "bin":
-            break
+            return auction_or_bin
         print("Try again!")
-        
+
+def year_choice():
     while True:
         year = input("Year: ")
         if year.isdigit():
-            break
+            return year
         print("Try again!")
-        
+
+def brand_choice():
+    brand = ""
+    brand_flag = True
     while brand_flag:
         brand = input("Brand: ")
         temp_brand_array = brand.split()
@@ -60,7 +57,11 @@ def main():
                 print("Try again!")
                 brand_flag = True
                 break
-        
+    return brand
+
+def player_choice():
+    player = ""
+    player_flag = True
     while player_flag:
         player = input("Player: ")
         temp_player_array = player.split()
@@ -70,6 +71,19 @@ def main():
                 print("Try again!")
                 player_flag = True
                 break
+    return player
+        
+def main():
+    auction_or_bin = ""
+    year = ""
+    brand = ""
+    player = ""
+    player_flag = True
+
+    auction_or_bin = auction_or_bin_choice()
+    year = year_choice()
+    brand = brand_choice()
+    player = player_choice()
 
     open_links(auction_or_bin, year, brand, player)
 
